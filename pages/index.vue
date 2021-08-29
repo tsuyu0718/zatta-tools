@@ -8,7 +8,8 @@
           </v-card-title>
           <v-card-text class="pb-0">
             <p>
-              注意：変換すると勝手にクリップボードにコピーします。
+              注意：変換すると勝手にクリップボードにコピーします。<br />
+              適当なのでバグったりしたらすみません
             </p>
             <p>
               処理前の文章
@@ -141,7 +142,8 @@ export default Vue.extend ({
     formatParty(): void {
       let strRemovedWhiteSpace = this.removeWhiteSpace(this.beforeText);
       if (this.isFromParty) {
-        strRemovedWhiteSpace = this.substringSpeakerName(strRemovedWhiteSpace);
+        const strArr = strRemovedWhiteSpace.split('\n');
+        strRemovedWhiteSpace = strArr.map(item => this.substringSpeakerName(item)).join('\n');
       }
       this.afterText = '/p ' + strRemovedWhiteSpace.replace(/\n/g, '\n/p ');
       this.writeToClipboard();
@@ -150,7 +152,8 @@ export default Vue.extend ({
     formatEcho(): void {
       let strRemovedWhiteSpace = this.removeWhiteSpace(this.beforeText);
       if (this.isFromParty) {
-        strRemovedWhiteSpace = this.substringSpeakerName(strRemovedWhiteSpace);
+        const strArr = strRemovedWhiteSpace.split('\n');
+        strRemovedWhiteSpace = strArr.map(item => this.substringSpeakerName(item)).join('\n');
       }
       this.afterText = '/e ' + strRemovedWhiteSpace.replace(/\n/g, '\n/e ');
       this.writeToClipboard();
