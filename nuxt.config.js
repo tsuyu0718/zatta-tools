@@ -9,7 +9,7 @@ export default {
     titleTemplate: '%s - static-trans-chat',
     title: 'static-trans-chat',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
@@ -73,6 +73,6 @@ export default {
   },
 
   generate: {
-    dir: 'docs'
+    dir: './dist'
   },
 }

@@ -3,7 +3,7 @@ name: GitHub Pages
 on:
   push:
     branches:
-      - github-pages
+      - main
   pull_request:
 
 jobs:
@@ -28,9 +28,10 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm ci
+      - run: npm run build
       - run: npm run generate
 
-      - name: deploy
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
