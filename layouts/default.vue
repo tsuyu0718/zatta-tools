@@ -6,6 +6,9 @@
       :clipped="clipped"
       fixed
       app
+      disable-resize-watcher="true"
+      disable-route-watcher="true"
+      temporary="true"
     >
       <v-list>
         <v-list-item
@@ -61,6 +64,11 @@ export default {
           icon: 'mdi-apps',
           title: 'チャット生成',
           to: '/',
+        },
+        {
+          icon: 'mdi-apps',
+          title: 'モブハントマップ',
+          to: '/mobmap',
         },
       ],
       miniVariant: false,

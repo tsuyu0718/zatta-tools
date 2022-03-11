@@ -27,8 +27,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -69,7 +68,19 @@ export default {
   },
 
   router: {
-    base: '/zatta-tools/'
+    base: '/zatta-tools/',
+    routes: [
+      // {
+      //   name: 'discount',
+      //   path: '/discount',
+      //   component: 'pages/discount.vue',
+      // },
+      // {
+      //   name: 'voyager',
+      //   path: '/voyager',
+      //   component: 'pages/voyager.vue',
+      // }
+    ]
   },
 
   generate: {
