@@ -12,5 +12,19 @@
       "name": "アポリア本部",
       "coordinate": [100, 450]
     }
+  ],
+  "Thavnair": [
+    {
+      "name": "イェドリマン",
+      "coordinate": [420, 570]
+    },
+    {
+      "name": "デミールの遺烈郷",
+      "coordinate": [160, 360]
+    },
+    {
+      "name": "パーラカの里",
+      "coordinate": [490, 270]
+    }
   ]
 }

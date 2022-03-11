@@ -12,39 +12,273 @@
               参考：<a href="http://yumemage.blog.fc2.com/blog-entry-506.html">【FF14】パッチ6.0 暁月エリアのモンスター配置場所 | 夢でもFF14</a>
             </p>
 
-            <!-- ラヴィリンソス -->
-            <v-card-actions
-              class="my-0 py-0"
+          <!-- <template v-slot:extension> -->
+            <v-tabs
+              fixed-tabs
+              v-model="selectArea"
             >
-              <v-select
-                v-model="select['Labyrinthos']"
-                @change="listener($event, 'Labyrinthos')"
-                :items="mobs['Labyrinthos']"
-                item-text="name"
-                item-value="name"
-                :menu-props="{ maxHeight: '700' }"
-                label="ラヴィリンソスのモブ名"
-                multiple
-                persistent-hint
-                return-object
-                chips
-              >
-                <template v-slot:selection="{ item, index }">
-                  <v-chip v-if="index <= 1">
-                    <span>{{ item.name }}</span>
-                  </v-chip>
-                  <span
-                    v-if="index === 2"
-                    class="grey--text text-caption"
-                  >
-                    (+{{ select['Labyrinthos'].length - 2 }} others)
-                  </span>
-                </template>
-              </v-select>
+              <v-tabs-slider color="yellow"></v-tabs-slider>
 
-            </v-card-actions>
-            <canvas ref="Labyrinthos" width="700" height="700" class="canvas"></canvas>
-            
+              <v-tab
+                v-for="item in areas.map((area) => area.nameE)"
+                :key="item"
+              >
+                {{ item }}
+              </v-tab>
+            </v-tabs>
+          <!-- </template> -->
+
+          <v-tabs-items v-model="selectArea">
+            <!-- <v-tab-item
+              v-for="item in areas"
+              :key="item.nameE"
+              eager
+            >
+              <v-card-actions
+                class="my-0 py-0"
+              >
+                <v-select
+                  v-model="select[item.nameE]"
+                  @change="listener($event, item.nameE)"
+                  :items="mobs[item.nameE]"
+                  item-text="name"
+                  item-value="name"
+                  :menu-props="{ maxHeight: '700' }"
+                  :label="item.nameJ + 'のモブ'"
+                  multiple
+                  persistent-hint
+                  return-object
+                  chips
+                >
+                  <template v-slot:selection="{ item, index }">
+                    <v-chip v-if="index == 0">
+                      <span>{{ item.name }}</span>
+                    </v-chip>
+                    <span
+                      v-if="index === 1"
+                      class="grey--text text-caption"
+                    >
+                      (+{{ select[item.nameE].length - 1 }} others)
+                    </span>
+                  </template>
+                </v-select>
+
+              </v-card-actions>
+              <canvas :ref="item.nameE" width="700" height="700" class="canvas"></canvas>
+            </v-tab-item> -->
+
+            <!-- ラヴィリンソス -->
+            <v-tab-item eager> 
+              <v-card-actions
+                class="my-0 py-0"
+              >
+                <v-select
+                  v-model="select['Labyrinthos']"
+                  @change="listener($event, 'Labyrinthos')"
+                  :items="mobs['Labyrinthos']"
+                  item-text="name"
+                  item-value="name"
+                  :menu-props="{ maxHeight: '700' }"
+                  label="ラヴィリンソスのモブ名"
+                  multiple
+                  persistent-hint
+                  return-object
+                  chips
+                >
+                  <template v-slot:selection="{ item, index }">
+                    <v-chip v-if="index == 0">
+                      <span>{{ item.name }}</span>
+                    </v-chip>
+                    <span
+                      v-if="index === 1"
+                      class="grey--text text-caption"
+                    >
+                      (+{{ select['Labyrinthos'].length - 1 }} others)
+                    </span>
+                  </template>
+                </v-select>
+
+              </v-card-actions>
+              <canvas ref="Labyrinthos" width="700" height="700" class="canvas"></canvas>
+             </v-tab-item>
+
+            <!-- サベネア島 -->
+            <v-tab-item eager>
+              <v-card-actions
+                class="my-0 py-0"
+              >
+                <v-select
+                  v-model="select['Thavnair']"
+                  @change="listener($event, 'Thavnair')"
+                  :items="mobs['Thavnair']"
+                  item-text="name"
+                  item-value="name"
+                  :menu-props="{ maxHeight: '700' }"
+                  label="サベネア島のモブ名"
+                  multiple
+                  persistent-hint
+                  return-object
+                  chips
+                >
+                  <template v-slot:selection="{ item, index }">
+                    <v-chip v-if="index == 0">
+                      <span>{{ item.name }}</span>
+                    </v-chip>
+                    <span
+                      v-if="index === 1"
+                      class="grey--text text-caption"
+                    >
+                      (+{{ select['Thavnair'].length - 1 }} others)
+                    </span>
+                  </template>
+                </v-select>
+
+              </v-card-actions>
+              <canvas ref="Thavnair" width="700" height="700" class="canvas"></canvas>
+            </v-tab-item>
+
+            <!-- ガレマルド -->
+            <v-tab-item eager>
+              <v-card-actions
+                class="my-0 py-0"
+              >
+                <v-select
+                  v-model="select['Garlemald']"
+                  @change="listener($event, 'Garlemald')"
+                  :items="mobs['Garlemald']"
+                  item-text="name"
+                  item-value="name"
+                  :menu-props="{ maxHeight: '700' }"
+                  label="ガレマルドのモブ名"
+                  multiple
+                  persistent-hint
+                  return-object
+                  chips
+                >
+                  <template v-slot:selection="{ item, index }">
+                    <v-chip v-if="index == 0">
+                      <span>{{ item.name }}</span>
+                    </v-chip>
+                    <span
+                      v-if="index === 1"
+                      class="grey--text text-caption"
+                    >
+                      (+{{ select['Garlemald'].length - 1 }} others)
+                    </span>
+                  </template>
+                </v-select>
+
+              </v-card-actions>
+              <canvas ref="Garlemald" width="700" height="700" class="canvas"></canvas>
+            </v-tab-item>
+
+            <!-- 嘆きの海 -->
+            <v-tab-item eager>
+              <v-card-actions
+                class="my-0 py-0"
+              >
+                <v-select
+                  v-model="select['Mare-Lamentorum']"
+                  @change="listener($event, 'Mare-Lamentorum')"
+                  :items="mobs['Mare-Lamentorum']"
+                  item-text="name"
+                  item-value="name"
+                  :menu-props="{ maxHeight: '700' }"
+                  label="嘆きの海のモブ"
+                  multiple
+                  persistent-hint
+                  return-object
+                  chips
+                >
+                  <template v-slot:selection="{ item, index }">
+                    <v-chip v-if="index == 0">
+                      <span>{{ item.name }}</span>
+                    </v-chip>
+                    <span
+                      v-if="index === 1"
+                      class="grey--text text-caption"
+                    >
+                      (+{{ select['Mare-Lamentorum'].length - 1 }} others)
+                    </span>
+                  </template>
+                </v-select>
+
+              </v-card-actions>
+              <canvas ref="Mare-Lamentorum" width="700" height="700" class="canvas"></canvas>
+            </v-tab-item>
+
+            <!-- エルピス -->
+            <v-tab-item eager>
+              <v-card-actions
+                class="my-0 py-0"
+              >
+                <v-select
+                  v-model="select['Elpis']"
+                  @change="listener($event, 'Elpis')"
+                  :items="mobs['Elpis']"
+                  item-text="name"
+                  item-value="name"
+                  :menu-props="{ maxHeight: '700' }"
+                  label="エルピスのモブ"
+                  multiple
+                  persistent-hint
+                  return-object
+                  chips
+                >
+                  <template v-slot:selection="{ item, index }">
+                    <v-chip v-if="index == 0">
+                      <span>{{ item.name }}</span>
+                    </v-chip>
+                    <span
+                      v-if="index === 1"
+                      class="grey--text text-caption"
+                    >
+                      (+{{ select['Elpis'].length - 1 }} others)
+                    </span>
+                  </template>
+                </v-select>
+
+              </v-card-actions>
+              <canvas ref="Elpis" width="700" height="700" class="canvas"></canvas>
+            </v-tab-item>
+
+            <!-- ウルティマ・トゥーレ -->
+            <v-tab-item eager>
+              <v-card-actions
+                class="my-0 py-0"
+              >
+                <v-select
+                  v-model="select['Ultima-Thule']"
+                  @change="listener($event, 'Ultima-Thule')"
+                  :items="mobs['Ultima-Thule']"
+                  item-text="name"
+                  item-value="name"
+                  :menu-props="{ maxHeight: '700' }"
+                  label="ウルティマ・トゥーレのモブ"
+                  multiple
+                  persistent-hint
+                  return-object
+                  chips
+                >
+                  <template v-slot:selection="{ item, index }">
+                    <v-chip v-if="index == 0">
+                      <span>{{ item.name }}</span>
+                    </v-chip>
+                    <span
+                      v-if="index === 1"
+                      class="grey--text text-caption"
+                    >
+                      (+{{ select['Ultima-Thule'].length - 1 }} others)
+                    </span>
+                  </template>
+                </v-select>
+
+              </v-card-actions>
+              <canvas ref="Ultima-Thule" width="700" height="700" class="canvas"></canvas>
+            </v-tab-item>
+
+          </v-tabs-items>
+
             <!-- サベネア -->
             <!-- <v-card-actions
               class="my-0 py-0"
@@ -90,7 +324,8 @@ type dataType = {
   px: number,
   areas: Area,
   width: number,
-  aetherytes: Aetherytes
+  aetherytes: Aetherytes,
+  selectArea: any
 };
 
 type Mob = {
@@ -114,23 +349,34 @@ export default Vue.extend ({
       px: 2,
       areas: areas,
       width: 700,
-      aetherytes: aetherytes
+      aetherytes: aetherytes,
+      selectArea: 0
     }
   },
   mounted() {
-    for (const map of this.maps)  {
-      let self = this;
-      self.canvas[map] = self.$refs[map]
-      self.context[map] = self.canvas[map].getContext("2d");
-      self.img[map] = new Image();
-      self.img[map].src = '/zatta-tools/map/' + map + '.png';
-      self.img[map].onload = function() {
-        self.initializeMap(self, map);
+    this.$nextTick( () => {
+      for (const [i, map] of this.maps.entries())  {
+      console.log(1)
+        let self = this;
+      console.log(2)
+        self.canvas[map] = self.$refs[map]
+      console.log(3)
+      console.log(self.canvas[map]);
+      if (self.canvas[map] === null || self.canvas[map] === undefined) return;
+        self.context[map] = self.canvas[map].getContext("2d");
+      console.log(4)
+        self.img[map] = new Image();
+      console.log(5)
+        self.img[map].src = '/zatta-tools/map/' + map + '.png';
+        self.img[map].onload = function() {
+          self.initializeMap(self, map);
+        }
+        this.canvas[map] = self.canvas[map];
+        this.context[map] = self.context[map];
+        this.img[map] = self.img[map];
+      console.log(map)
       }
-      this.canvas[map] = self.canvas[map];
-      this.context[map] = self.context[map];
-      this.img[map] = self.img[map];
-    }
+    });
   },
   methods: {
     draw(map: string, mob: Mob) {
@@ -262,7 +508,14 @@ export default Vue.extend ({
     strokeRoundRect(ctx: any, x: any, y: any, w: any, h: any, r: any) {
       this.createRoundRectPath(ctx, x, y, w, h, r);
       ctx.stroke();
-    }
+    },
+    // nextStep (n: number) {
+    //   if (n === areas.length) {
+    //     this.e1 = 1
+    //   } else {
+    //     this.e1 = n + 1
+    //   }
+    // },
   },
   watch: {
     select: {

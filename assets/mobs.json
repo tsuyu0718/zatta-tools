@@ -242,5 +242,294 @@
       ],
       "order": 0
     }
+  ],
+  "Thavnair": [
+    {
+      "name": "アキャーリクラブ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "アシュヴァッタ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "ヴァジュララングラ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "ヴァルラス",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "オドカン",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "ガジャ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "カチャパ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "グハーシャヤ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "クンビーラ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "サベネアンジャムメル",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "シュトラムルグ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "シーングパクシー",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "スターマイト",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "チャムロッシュ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "バブーン",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "ハヌマンラングール",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "ハンサ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "ピシャーチャ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "ブンジャンガ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    },
+    {
+      "name": "マンジュサカ",
+      "coordinate": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "order": 0
+    }
+  ],
+  "Garlemald": [
+    {"name": "アルマスティ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "イルサバード・トゥルスス", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "エブラーナベアー", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "エブラーナ・アイストラップ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オウヴィボス", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オーバーグロウンローズ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オーバーチューンド", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オートマチック・アヴェンジャー", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オートマチック・キャバルリー", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オートマチック・コロッサス", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オートマチック・サテライト", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オートマチック・スラッシャー", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オートマチック・デスマシーン", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オートマチック・ビット", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オートマチック・マグナローダー", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "カニスルピナス", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "サイガ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "セルリウムゾブラン", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "モロズゴ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ヨトゥン", "coordinate": [0, 0, 0, 0], "order": 0}
+  ],
+  "Mare-Lamentorum": [
+    {"name": "アーマルコライト","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ウィーパー","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オスキュレーター","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "クリーナー","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ケアテイカー","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "サポーター","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "シンカー","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "スウィーパー","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "スクレーパー","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ダイナマイト","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ダウンフォール・アラーム","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ダウンフォール・ドロイド","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ダウンフォール・ハンダー","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ダフニア","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "トリマー","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "パノプト","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ムース","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ルナテンダー","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "レゴリス","corrdinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ワンダラー","corrdinate": [0, 0, 0, 0], "order": 0}
+  ],
+  "Elpis": [
+    {"name": "アカンサ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "イアンティネ・ペタルダ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ウラヌー・メデューサ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "エルピスタウロス", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "イグドリア", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オキュペテ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オピオタウロス", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オピオン", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "オリジン・ヒッポセルフ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "キアネ・ペタルダ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "グリュプス", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "コーキネ・ペタルダ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ハルピュイア", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "バード・オブ・エルピス", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ヒッペー", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ファノプシュケ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ペガソス", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "マーカス・モルボル", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "メデューサ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "メラニオン", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "モノセロス", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "リコペルシクム", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "レモラ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ロティス", "coordinate": [0, 0, 0, 0], "order": 0}
+  ],
+  "Ultima-Thule": [
+    {"name": "アザーワン", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ステラ・アンフィプテレ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ステラ・カラペスドラゴン", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ステラ・ドラゴン", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ステラ・ドラゴンフライ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ステラ・ブロビニャク", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ステラ・レッサードラゴン", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ステラ・ワイバーン", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "デルタ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ドリフティング・イーア", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ブロークン・オミクロン", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ベータ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ラムダ", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "ルミニオン", "coordinate": [0, 0, 0, 0], "order": 0},
+      {"name": "レベルトリッカー", "coordinate": [0, 0, 0, 0], "order": 0}
   ]
 }
