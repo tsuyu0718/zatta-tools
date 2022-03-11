@@ -123,7 +123,7 @@ export default Vue.extend ({
       self.canvas[map] = self.$refs[map]
       self.context[map] = self.canvas[map].getContext("2d");
       self.img[map] = new Image();
-      self.img[map].src = '/map/' + map + '.png';
+      self.img[map].src = '/zatta-tools/map/' + map + '.png';
       self.img[map].onload = function() {
         self.initializeMap(self, map);
       }

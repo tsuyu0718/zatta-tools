@@ -6,9 +6,9 @@
       :clipped="clipped"
       fixed
       app
-      disable-resize-watcher="true"
-      disable-route-watcher="true"
-      temporary="true"
+      disable-resize-watcher
+      disable-route-watcher
+      temporary
     >
       <v-list>
         <v-list-item
