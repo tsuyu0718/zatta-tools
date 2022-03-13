@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="12">
+    <v-col cols="12">
 
         <v-card>
           <v-card-title class="headline">
@@ -11,16 +11,16 @@
             <p>
               参考：<a href="http://yumemage.blog.fc2.com/blog-entry-506.html">【FF14】パッチ6.0 暁月エリアのモンスター配置場所 | 夢でもFF14</a>
             </p>
-
           <!-- <template v-slot:extension> -->
             <v-tabs
               fixed-tabs
               v-model="selectArea"
+              show-arrows
             >
               <v-tabs-slider color="yellow"></v-tabs-slider>
 
               <v-tab
-                v-for="item in areas.map((area) => area.nameE)"
+                v-for="item in areas.map((area) => area.nameJ)"
                 :key="item"
               >
                 {{ item }}
@@ -29,6 +29,7 @@
           <!-- </template> -->
 
           <v-tabs-items v-model="selectArea">
+            <!-- TODO: v-forのせいでDOMレンダリング先行を強制させられない？調査 -->
             <!-- <v-tab-item
               v-for="item in areas"
               :key="item.nameE"
@@ -43,7 +44,7 @@
                   :items="mobs[item.nameE]"
                   item-text="name"
                   item-value="name"
-                  :menu-props="{ maxHeight: '700' }"
+                  :menu-props="{ maxHeight: '500' }"
                   :label="item.nameJ + 'のモブ'"
                   multiple
                   persistent-hint
@@ -64,7 +65,7 @@
                 </v-select>
 
               </v-card-actions>
-              <canvas :ref="item.nameE" width="700" height="700" class="canvas"></canvas>
+              <canvas :ref="item.nameE" :width="width" :height="width" class="canvas"></canvas>
             </v-tab-item> -->
 
             <!-- ラヴィリンソス -->
@@ -78,7 +79,7 @@
                   :items="mobs['Labyrinthos']"
                   item-text="name"
                   item-value="name"
-                  :menu-props="{ maxHeight: '700' }"
+                  :menu-props="{ maxHeight: '500' }"
                   label="ラヴィリンソスのモブ名"
                   multiple
                   persistent-hint
@@ -99,7 +100,7 @@
                 </v-select>
 
               </v-card-actions>
-              <canvas ref="Labyrinthos" width="700" height="700" class="canvas"></canvas>
+              <canvas ref="Labyrinthos" :width="width * adjust" :height="width * adjust" class="canvas"></canvas>
              </v-tab-item>
 
             <!-- サベネア島 -->
@@ -113,7 +114,7 @@
                   :items="mobs['Thavnair']"
                   item-text="name"
                   item-value="name"
-                  :menu-props="{ maxHeight: '700' }"
+                  :menu-props="{ maxHeight: '500' }"
                   label="サベネア島のモブ名"
                   multiple
                   persistent-hint
@@ -134,21 +135,29 @@
                 </v-select>
 
               </v-card-actions>
-              <canvas ref="Thavnair" width="700" height="700" class="canvas"></canvas>
+              <canvas ref="Thavnair" :width="width" :height="width" class="canvas"></canvas>
             </v-tab-item>
 
             <!-- ガレマルド -->
             <v-tab-item eager>
+              <v-alert
+                dense
+                class="my-2"
+                type="error"
+              >
+                未実装です。まだ動きません！
+              </v-alert>
               <v-card-actions
                 class="my-0 py-0"
               >
                 <v-select
+                  disabled
                   v-model="select['Garlemald']"
                   @change="listener($event, 'Garlemald')"
                   :items="mobs['Garlemald']"
                   item-text="name"
                   item-value="name"
-                  :menu-props="{ maxHeight: '700' }"
+                  :menu-props="{ maxHeight: '500' }"
                   label="ガレマルドのモブ名"
                   multiple
                   persistent-hint
@@ -169,21 +178,29 @@
                 </v-select>
 
               </v-card-actions>
-              <canvas ref="Garlemald" width="700" height="700" class="canvas"></canvas>
+              <canvas ref="Garlemald" :width="width" :height="width" class="canvas"></canvas>
             </v-tab-item>
 
             <!-- 嘆きの海 -->
             <v-tab-item eager>
+              <v-alert
+                dense
+                class="my-2"
+                type="error"
+              >
+                未実装です。まだ動きません！
+              </v-alert>
               <v-card-actions
                 class="my-0 py-0"
               >
                 <v-select
-                  v-model="select['Mare-Lamentorum']"
-                  @change="listener($event, 'Mare-Lamentorum')"
-                  :items="mobs['Mare-Lamentorum']"
+                  disabled
+                  v-model="select['Mare_Lamentorum']"
+                  @change="listener($event, 'Mare_Lamentorum')"
+                  :items="mobs['Mare_Lamentorum']"
                   item-text="name"
                   item-value="name"
-                  :menu-props="{ maxHeight: '700' }"
+                  :menu-props="{ maxHeight: '500' }"
                   label="嘆きの海のモブ"
                   multiple
                   persistent-hint
@@ -198,27 +215,35 @@
                       v-if="index === 1"
                       class="grey--text text-caption"
                     >
-                      (+{{ select['Mare-Lamentorum'].length - 1 }} others)
+                      (+{{ select['Mare_Lamentorum'].length - 1 }} others)
                     </span>
                   </template>
                 </v-select>
 
               </v-card-actions>
-              <canvas ref="Mare-Lamentorum" width="700" height="700" class="canvas"></canvas>
+              <canvas ref="Mare_Lamentorum" :width="width" :height="width" class="canvas"></canvas>
             </v-tab-item>
 
             <!-- エルピス -->
             <v-tab-item eager>
+              <v-alert
+                dense
+                class="my-2"
+                type="error"
+              >
+                未実装です。まだ動きません！
+              </v-alert>
               <v-card-actions
                 class="my-0 py-0"
               >
                 <v-select
+                  disabled
                   v-model="select['Elpis']"
                   @change="listener($event, 'Elpis')"
                   :items="mobs['Elpis']"
                   item-text="name"
                   item-value="name"
-                  :menu-props="{ maxHeight: '700' }"
+                  :menu-props="{ maxHeight: '500' }"
                   label="エルピスのモブ"
                   multiple
                   persistent-hint
@@ -239,21 +264,29 @@
                 </v-select>
 
               </v-card-actions>
-              <canvas ref="Elpis" width="700" height="700" class="canvas"></canvas>
+              <canvas ref="Elpis" :width="width" :height="width" class="canvas"></canvas>
             </v-tab-item>
 
             <!-- ウルティマ・トゥーレ -->
             <v-tab-item eager>
+              <v-alert
+                dense
+                class="my-2"
+                type="error"
+              >
+                未実装です。まだ動きません！
+              </v-alert>
               <v-card-actions
                 class="my-0 py-0"
               >
                 <v-select
-                  v-model="select['Ultima-Thule']"
-                  @change="listener($event, 'Ultima-Thule')"
-                  :items="mobs['Ultima-Thule']"
+                  disabled
+                  v-model="select['Ultima_Thule']"
+                  @change="listener($event, 'Ultima_Thule')"
+                  :items="mobs['Ultima_Thule']"
                   item-text="name"
                   item-value="name"
-                  :menu-props="{ maxHeight: '700' }"
+                  :menu-props="{ maxHeight: '500' }"
                   label="ウルティマ・トゥーレのモブ"
                   multiple
                   persistent-hint
@@ -268,37 +301,16 @@
                       v-if="index === 1"
                       class="grey--text text-caption"
                     >
-                      (+{{ select['Ultima-Thule'].length - 1 }} others)
+                      (+{{ select['Ultima_Thule'].length - 1 }} others)
                     </span>
                   </template>
                 </v-select>
 
               </v-card-actions>
-              <canvas ref="Ultima-Thule" width="700" height="700" class="canvas"></canvas>
+              <canvas ref="Ultima_Thule" :width="width" :height="width" class="canvas"></canvas>
             </v-tab-item>
 
           </v-tabs-items>
-
-            <!-- サベネア -->
-            <!-- <v-card-actions
-              class="my-0 py-0"
-            >
-              <v-select
-                v-model="select['Thavnair']"
-                @change="listener($event, 'Thavnair')"
-                :items="mobs.Thavnair"
-                item-text="name"
-                item-value="coordinate"
-                :menu-props="{ maxHeight: '700' }"
-                label="サベネア島のモブ名"
-                multiple
-                persistent-hint
-                return-object
-              ></v-select>
-
-            </v-card-actions>
-            <canvas ref="Thavnair" width="700" height="700" class="canvas"></canvas> -->
-            
           </v-card-text>
         </v-card>
     </v-col>
@@ -324,6 +336,7 @@ type dataType = {
   px: number,
   areas: Area,
   width: number,
+  adjust: number,
   aetherytes: Aetherytes,
   selectArea: any
 };
@@ -339,7 +352,12 @@ export default Vue.extend ({
   data(): dataType{
     return {
       select: {
-        Labyrinthos: []
+        Labyrinthos: [],
+        Thavnair: [],
+        Garlemald: [],
+        Mare_Lamentorum: [],
+        Elpis: [],
+        Ultima_Thule: []
       },
       mobs: mobs,
       canvas: {},
@@ -349,24 +367,20 @@ export default Vue.extend ({
       px: 2,
       areas: areas,
       width: 700,
+      adjust: 1,
       aetherytes: aetherytes,
       selectArea: 0
     }
   },
   mounted() {
     this.$nextTick( () => {
+      window.addEventListener('resize', this.handleResize);
       for (const [i, map] of this.maps.entries())  {
-      console.log(1)
         let self = this;
-      console.log(2)
         self.canvas[map] = self.$refs[map]
-      console.log(3)
-      console.log(self.canvas[map]);
       if (self.canvas[map] === null || self.canvas[map] === undefined) return;
         self.context[map] = self.canvas[map].getContext("2d");
-      console.log(4)
         self.img[map] = new Image();
-      console.log(5)
         self.img[map].src = '/zatta-tools/map/' + map + '.png';
         self.img[map].onload = function() {
           self.initializeMap(self, map);
@@ -374,7 +388,6 @@ export default Vue.extend ({
         this.canvas[map] = self.canvas[map];
         this.context[map] = self.context[map];
         this.img[map] = self.img[map];
-      console.log(map)
       }
     });
   },
@@ -389,20 +402,20 @@ export default Vue.extend ({
       if (mob.coordinate.length > 4) {
         for (let i = 0; i < mob.coordinate.length / 4; i++ ) {
           const tmpCoordinate = mob.coordinate.slice(i * 4, (i + 1) * 4);
-          this.strokeRoundRect(ctx, tmpCoordinate[0], tmpCoordinate[1], tmpCoordinate[2], tmpCoordinate[3], 5);
-          this.fillRoundRect(ctx, tmpCoordinate[0], tmpCoordinate[1], tmpCoordinate[2], tmpCoordinate[3], 5);
-          this.drawText(ctx, mob, tmpCoordinate[0], tmpCoordinate[1]);
+          this.strokeRoundRect(ctx, tmpCoordinate[0] * this.adjust, tmpCoordinate[1] * this.adjust, tmpCoordinate[2] * this.adjust, tmpCoordinate[3] * this.adjust, 5);
+          this.fillRoundRect(ctx, tmpCoordinate[0] * this.adjust, tmpCoordinate[1] * this.adjust, tmpCoordinate[2] * this.adjust, tmpCoordinate[3] * this.adjust, 5);
+          this.drawText(ctx, mob, tmpCoordinate[0] * this.adjust, tmpCoordinate[1] * this.adjust);
         }
       } else {
-        this.strokeRoundRect(ctx, mob.coordinate[0], mob.coordinate[1], mob.coordinate[2], mob.coordinate[3], 5);
-        this.fillRoundRect(ctx, mob.coordinate[0], mob.coordinate[1], mob.coordinate[2], mob.coordinate[3], 5);
-        this.drawText(ctx, mob, mob.coordinate[0], mob.coordinate[1]);
+        this.strokeRoundRect(ctx, mob.coordinate[0] * this.adjust, mob.coordinate[1] * this.adjust, mob.coordinate[2] * this.adjust, mob.coordinate[3] * this.adjust, 5);
+        this.fillRoundRect(ctx, mob.coordinate[0] * this.adjust, mob.coordinate[1] * this.adjust, mob.coordinate[2] * this.adjust, mob.coordinate[3] * this.adjust, 5);
+        this.drawText(ctx, mob, mob.coordinate[0] * this.adjust, mob.coordinate[1] * this.adjust);
       }
     },
     drawText(ctx: any, mob: Mob, textX: number, textY: number) {
       // テキストの描画
       ctx.save();
-      const fontSize = 13;
+      const fontSize = 13 * this.adjust;
       ctx.strokeStyle = "#fff";
       ctx.lineWidth = "5";
       ctx.lineJoin = 'round';
@@ -423,9 +436,8 @@ export default Vue.extend ({
     listener(event: any, mapName: string) {
       // 対象canvasを一旦クリア
       let ctx = this.context[mapName];
-      ctx.clearRect(0, 0, 700, 700);
+      ctx.clearRect(0, 0, this.width, this.width);
       let self = this;
-      self.context[mapName].drawImage(self.img[mapName], 0, 0, 700, 700);
       self.initializeMap(self, mapName);
 
       // 対象canvasを描画
@@ -437,22 +449,22 @@ export default Vue.extend ({
     },
     initializeMap(self: any, map: any) {
       self.context[map].save();
-      self.context[map].drawImage(self.img[map], 0, 0, 700, 700);
+      self.context[map].drawImage(self.img[map], 0, 0, this.width * this.adjust, this.width * this.adjust);
       // エーテライトのラベル描画
       const key: keyof typeof aetherytes = map as any;
       for (const area of self.aetherytes[key]) {
-        const textX = area.coordinate[0];
-        const textY = area.coordinate[1];
+        const textX = area.coordinate[0] * this.adjust;
+        const textY = area.coordinate[1] * this.adjust;
         this.drawLabelText(self, area.name, textX, textY, map);
       }
       self.context[map].restore();
     },
     drawLabelText(self: any, text: string, textX: number, textY: number, map: string) {
-      const fontSize = 10;
+      const fontSize = 10 * this.adjust;
       self.context[map].font = "Bold " + fontSize + "px sans-serif";
       let measured = self.context[map].measureText(text);
       /*先に背景ボックスを描画*/
-      const lineWith = 5;
+      const lineWith = fontSize / 2;
       self.context[map].fillStyle = 'rgba(0, 80, 50, 0.7)';
       self.context[map].fillRect(textX - measured.width / 2 - fontSize / 2, textY, measured.width + fontSize, fontSize * 2);
       
@@ -509,19 +521,25 @@ export default Vue.extend ({
       this.createRoundRectPath(ctx, x, y, w, h, r);
       ctx.stroke();
     },
-    // nextStep (n: number) {
-    //   if (n === areas.length) {
-    //     this.e1 = 1
-    //   } else {
-    //     this.e1 = n + 1
-    //   }
-    // },
+    handleResize() {
+      if (window.innerWidth < 800) {  // レスポンシブもどき
+        this.adjust = 0.4;
+      } else {
+        this.adjust = 1.0;
+      }
+      for (const map of Object.keys(this.mobs)) {
+        this.listener(['DUMMY'], map);  // [0] is dummy
+      }
+    },
   },
   watch: {
     select: {
       handler(val: Mob[], oldVal: Mob[]) {
       }
     }
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.handleResize);
   }
 });
 </script>

@@ -26,5 +26,53 @@
       "name": "パーラカの里",
       "coordinate": [490, 270]
     }
+  ],
+  "Garlemald": [
+    {
+      "name": "キャンプ・ブロークングラス",
+      "coordinate": [210, 505]
+    },
+    {
+      "name": "テルティウム駅",
+      "coordinate": [530, 280]
+    }
+  ],
+  "Mare_Lamentorum": [
+    {
+      "name": "涙の入江",
+      "coordinate": [160, 565]
+    },
+    {
+      "name": "ベストウェイ・バロー",
+      "coordinate": [350, 170]
+    }
+  ],
+  "Elpis": [
+    {
+      "name": "アナグノリシス天測園",
+      "coordinate": [400, 380]
+    },
+    {
+      "name": "十二節の園",
+      "coordinate": [130, 520]
+    },
+    {
+      "name": "ポイエテーン・オイコス",
+      "coordinate": [170, 270]
+    }
+  ],
+  "Ultima_Thule": [
+    {
+      "name": "リア・ターラ",
+      "coordinate": [160, 440]
+    },
+    {
+      "name": "イーアの里",
+      "coordinate": [365, 120]
+    },
+    {
+      "name": "オミクロンベース",
+      "coordinate": [520, 465]
+    }
   ]
 }
