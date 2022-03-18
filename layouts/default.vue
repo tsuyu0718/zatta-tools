@@ -59,7 +59,7 @@
 export default {
   data() {
     return {
-      commitHash: process.env.VUE_APP_GIT_COMMIT_HASH,
+      commitHash: process.env.NUXT_ENV_GIT_COMMIT_HASH,
       clipped: false,
       drawer: false,
       fixed: false,
