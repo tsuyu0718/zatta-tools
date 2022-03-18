@@ -317,7 +317,7 @@
   </v-row>
 </template>
 
-<style lang="scss">
+<style lang="css">
 .scrollable-tabs-items {
   overflow-y: auto;
   overflow-x: auto;
