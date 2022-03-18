@@ -28,7 +28,13 @@
             </v-tabs>
           <!-- </template> -->
 
-          <v-tabs-items :touchless="true" v-model="selectArea" class="scrollable-tabs-items">
+          <v-tabs-items
+            :touchless="true"
+            v-model="selectArea"
+            style="overflow-y: auto;
+                    overflow-x: auto;
+                    width: 800px;"
+          >
             <!-- TODO: v-forのせいでDOMレンダリング先行を強制させられない？調査 -->
             <!-- <v-tab-item
               v-for="item in areas"
@@ -316,14 +322,6 @@
     </v-col>
   </v-row>
 </template>
-
-<style lang="css">
-.scrollable-tabs-items {
-  overflow-y: auto;
-  overflow-x: auto;
-  width: 800px;
-}
-</style>
 
 <script lang="ts">
 import Vue from 'vue'
