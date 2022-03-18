@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "VUE_APP_GIT_COMMIT_HASH=$(git rev-parse HEAD) nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "VUE_APP_GIT_COMMIT_HASH=$(git rev-parse HEAD) nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js"
   },

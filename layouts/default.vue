@@ -48,6 +48,9 @@
       >
         <v-icon>mdi-twitter</v-icon>twitter
       </v-btn>
+      <span class="ml-2">
+        commit: {{ commitHash }}
+      </span>
     </v-footer>
   </v-app>
 </template>
@@ -56,6 +59,7 @@
 export default {
   data() {
     return {
+      commitHash: process.env.VUE_APP_GIT_COMMIT_HASH,
       clipped: false,
       drawer: false,
       fixed: false,
