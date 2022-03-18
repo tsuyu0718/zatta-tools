@@ -28,7 +28,7 @@
             </v-tabs>
           <!-- </template> -->
 
-          <v-tabs-items v-model="selectArea">
+          <v-tabs-items :touchless="true" v-model="selectArea" class="scrollable-tabs-items">
             <!-- TODO: v-forのせいでDOMレンダリング先行を強制させられない？調査 -->
             <!-- <v-tab-item
               v-for="item in areas"
@@ -69,7 +69,7 @@
             </v-tab-item> -->
 
             <!-- ラヴィリンソス -->
-            <v-tab-item eager> 
+            <v-tab-item eager>
               <v-card-actions
                 class="my-0 py-0"
               >
@@ -317,6 +317,14 @@
   </v-row>
 </template>
 
+<style lang="scss">
+.scrollable-tabs-items {
+  overflow-y: auto;
+  overflow-x: auto;
+  width: 800px;
+}
+</style>
+
 <script lang="ts">
 import Vue from 'vue'
 import mobs from '../assets/mobs.json'
@@ -374,7 +382,7 @@ export default Vue.extend ({
   },
   mounted() {
     this.$nextTick( () => {
-      window.addEventListener('resize', this.handleResize);
+      // window.addEventListener('resize', this.handleResize);
       for (const [i, map] of this.maps.entries())  {
         let self = this;
         self.canvas[map] = self.$refs[map]
@@ -521,16 +529,16 @@ export default Vue.extend ({
       this.createRoundRectPath(ctx, x, y, w, h, r);
       ctx.stroke();
     },
-    handleResize() {
-      if (window.innerWidth < 800) {  // レスポンシブもどき
-        this.adjust = 0.4;
-      } else {
-        this.adjust = 1.0;
-      }
-      for (const map of Object.keys(this.mobs)) {
-        this.listener(['DUMMY'], map);  // [0] is dummy
-      }
-    },
+    // handleResize() {
+    //   if (window.innerWidth < 800) {  // レスポンシブもどき
+    //     this.adjust = 0.4;
+    //   } else {
+    //     this.adjust = 1.0;
+    //   }
+    //   for (const map of Object.keys(this.mobs)) {
+    //     this.listener(['DUMMY'], map);  // [0] is dummy
+    //   }
+    // },
   },
   watch: {
     select: {
@@ -538,8 +546,8 @@ export default Vue.extend ({
       }
     }
   },
-  beforeDestroy () {
-    window.removeEventListener('resize', this.handleResize);
-  }
+  // beforeDestroy () {
+  //   window.removeEventListener('resize', this.handleResize);
+  // }
 });
 </script>
