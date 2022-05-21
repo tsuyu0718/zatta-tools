@@ -43,7 +43,23 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/markdownit',
   ],
+
+  // [optional] markdownit options
+  // See https://github.com/markdown-it/markdown-it
+  markdownit: {
+    preset: 'default',
+    linkify: false,
+    breaks: true,
+    html: true,
+    typegraphy: true,
+    injected: true,
+    use: [
+      'markdown-it-table-of-contents',
+      'markdown-it-anchor',
+    ]
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
@@ -70,18 +86,7 @@ export default {
 
   router: {
     base: '/zatta-tools/',
-    routes: [
-      // {
-      //   name: 'discount',
-      //   path: '/discount',
-      //   component: 'pages/discount.vue',
-      // },
-      // {
-      //   name: 'voyager',
-      //   path: '/voyager',
-      //   component: 'pages/voyager.vue',
-      // }
-    ]
+    routes: []
   },
 
   generate: {
