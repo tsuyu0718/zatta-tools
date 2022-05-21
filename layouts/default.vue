@@ -65,14 +65,24 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'チャット生成',
+          icon: 'mdi-home',
+          title: 'ホーム',
           to: '/',
         },
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-message-text',
+          title: 'チャット生成',
+          to: '/chat',
+        },
+        {
+          icon: 'mdi-map',
           title: 'モブハントマップ',
           to: '/mobmap',
+        },
+        {
+          icon: 'mdi-rocket',
+          title: '絶アレキ固定覚書',
+          to: '/tea',
         },
       ],
       miniVariant: false,

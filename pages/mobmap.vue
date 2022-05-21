@@ -11,7 +11,10 @@
             <p>
               参考：<a href="http://yumemage.blog.fc2.com/blog-entry-506.html">【FF14】パッチ6.0 暁月エリアのモンスター配置場所 | 夢でもFF14</a>
             </p>
-          <!-- <template v-slot:extension> -->
+            <p>
+              フレンドから「こういう機能ほしい」と聞いてウッキウキで作っていたら、他サイト(=参考先さま)に既にその機能が存在していたことに気付いていないだけだった回。更新中止
+            </p>
+
             <v-tabs
               fixed-tabs
               v-model="selectArea"
