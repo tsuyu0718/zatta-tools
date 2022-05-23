@@ -53,6 +53,19 @@
                 <v-list-item-subtitle>絶アレキがんばろう</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
+
+            <v-list-item two-line
+              to="/healer"
+              router
+            >
+              <v-list-item-content>
+                <v-list-item-action>
+                  <v-icon>mdi-hospital-box-outline</v-icon>
+                </v-list-item-action>
+                <v-list-item-title>ヒーラー魔法/スキル覚書</v-list-item-title>
+                <v-list-item-subtitle>ケアルケアルケアル</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
             
           </v-list-item-group>
         </v-list>

@@ -84,6 +84,11 @@ export default {
           title: '絶アレキ固定覚書',
           to: '/tea',
         },
+        {
+          icon: 'mdi-hospital-box-outline',
+          title: 'ヒーラー魔法/スキル覚書',
+          to: '/healer',
+        },
       ],
       miniVariant: false,
       right: true,
