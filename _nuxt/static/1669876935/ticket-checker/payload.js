@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/ticket-checker", {data:[{}],fetch:{},mutations:[]});
